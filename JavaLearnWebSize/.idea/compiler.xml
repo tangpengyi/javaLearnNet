@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="JavaLearnWebSize-commons" />
+        <module name="JavaLearnWebSize-domain" />
+        <module name="JavaLearnWebSize-web-admin" />
+        <module name="JavaLearnWebSize-web-api" />
+        <module name="JavaLearnWebSize-web-UI" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JavaLearnWebSize" target="1.5" />
+      <module name="JavaLearnWebSize-commons" target="1.8" />
+      <module name="JavaLearnWebSize-dependencies" target="1.8" />
+      <module name="JavaLearnWebSize-domain" target="1.8" />
+      <module name="JavaLearnWebSize-web-admin" target="1.8" />
+      <module name="JavaLearnWebSize-web-api" target="1.8" />
+      <module name="JavaLearnWebSize-web-UI" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

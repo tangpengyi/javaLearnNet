@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaLearnWebSize.iml" filepath="$PROJECT_DIR$/.idea/JavaLearnWebSize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearnWebSize-commons/JavaLearnWebSize-commons.iml" filepath="$PROJECT_DIR$/JavaLearnWebSize-commons/JavaLearnWebSize-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearnWebSize-dependencies/JavaLearnWebSize-dependencies.iml" filepath="$PROJECT_DIR$/JavaLearnWebSize-dependencies/JavaLearnWebSize-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearnWebSize-domain/JavaLearnWebSize-domain.iml" filepath="$PROJECT_DIR$/JavaLearnWebSize-domain/JavaLearnWebSize-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearnWebSize-web-UI/JavaLearnWebSize-web-UI.iml" filepath="$PROJECT_DIR$/JavaLearnWebSize-web-UI/JavaLearnWebSize-web-UI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearnWebSize-web-admin/JavaLearnWebSize-web-admin.iml" filepath="$PROJECT_DIR$/JavaLearnWebSize-web-admin/JavaLearnWebSize-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearnWebSize-web-api/JavaLearnWebSize-web-api.iml" filepath="$PROJECT_DIR$/JavaLearnWebSize-web-api/JavaLearnWebSize-web-api.iml" />
+    </modules>
+  </component>
+</project>

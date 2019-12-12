@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tpy.dao.ResourceModelMapper">
+
+    <select id="queryfilecount" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select uploadcount from resourcesTable where isDelete = 0 and num = #{num}
+    </select>
+
+    <update id="modifyByFileLoadCount" parameterType="com.tpy.entity.ResourceModel">
+        update resourcesTable set uploadcount = #{uploadcount} where num = #{num} and isDelete = 0
+    </update>
+
+    <insert id="addResourceMapper" parameterType="com.tpy.entity.ResourceModel">
+        insert into resourcesTable(resourceName,path,isDelete,filetype,filesize,uploadcount)
+        values(#{resourceName},#{path},0,#{filetype},#{filesize},0)
+    </insert>
+
+
+    <select id="idnexQueryResource" resultType="com.tpy.entity.ResourceModel" parameterType="java.lang.String">
+        select * from resourcesTable WHERE filetype=#{filetype} and isDelete=0 limit 0,5;
+    </select>
+
+
+    <select id="queryResourceByName" parameterType="java.lang.String" resultMap="queryResourceMap">
+        select * from resourcesTable where isDelete = 0 and resourceName like "%"#{_parameter}"%"
+    </select>
+    <resultMap id="queryResourceMap" type="com.tpy.entity.ResourceModel">
+        <id property="num" column="num"></id>
+        <result property="resourceName" column="resourceName"></result>
+        <result property="path" column="path"></result>
+    </resultMap>
+
+
+    <update id="deleteResourceByNum" parameterType="java.lang.Integer">
+        update resourcesTable set isDelete = 1 where num = #{num}
+    </update>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tpy</groupId>
+    <artifactId>JavaLearnWebSize</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <!--统一管理项目-->
+        <module>JavaLearnWebSize-dependencies</module>
+        <!--公共工具类-->
+        <module>JavaLearnWebSize-commons</module>
+        <!--实体类 模型-->
+        <module>JavaLearnWebSize-domain</module>
+        <!--管理后台-->
+        <module>JavaLearnWebSize-web-admin</module>
+        <!--前端-->
+        <module>JavaLearnWebSize-web-UI</module>
+        <module>JavaLearnWebSize-web-api</module>
+    </modules>
+</project>

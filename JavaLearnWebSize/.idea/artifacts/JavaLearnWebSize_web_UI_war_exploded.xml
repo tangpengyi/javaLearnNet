@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JavaLearnWebSize-web-UI:war exploded">
+    <output-path>$PROJECT_DIR$/JavaLearnWebSize-web-UI/target/JavaLearnWebSize-web-UI-1.0.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>JavaLearnWebSize-web-UI</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JavaLearnWebSize-web-UI" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/JavaLearnWebSize-web-UI/target/JavaLearnWebSize-web-UI-1.0.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="JavaLearnWebSize-web-UI/web/Web" />
+    </root>
+  </artifact>
+</component>

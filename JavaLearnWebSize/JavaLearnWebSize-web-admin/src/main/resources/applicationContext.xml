@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--加载配置文件-->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:db.properties"/>
+
+
+    <!--com.alibaba.druid.pool.DruidDataSource-->
+    <!--org.apache.commons.dbcp.BasicDataSource-->
+    <!--配置数据库信息 替代mybatis配置文件-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${user}"/>
+        <property name="password" value="${password}"/>
+        <property name="maxActive" value="${maxAction}"/>
+        <property name="maxIdle" value="${maxIdle}"/>
+    </bean>
+
+    <!--org.springframework.jdbc.datasource.Driver-->
+    <!--在springIOC容器中，创建MyBatis的核心类SqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml" />
+    </bean>
+
+    <!--注解方式-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--指定批量生产那个包中的mapper对象-->
+        <property name="basePackage" value="com.tpy.dao"/>
+    </bean>
+
+
+    <!--开启spring-mybatis事务-->
+    <!--开启注解扫描 主要扫描service层-->
+    <context:component-scan base-package="com.tpy.service" ></context:component-scan>
+    <!--开启事务-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

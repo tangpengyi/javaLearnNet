@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tpy.dao.instanceMapper">
+
+    <update id="ModifyDetailstutorial" parameterType="com.tpy.entity.DetailsTutorial">
+        update detailstutorial
+        set title = #{title},context = #{context},explainContext = #{explainContext},runResult = #{runResult},filePath = #{filePath}
+        where dtNum = #{dtNum} and isDelete = 0
+    </update>
+
+
+    <update id="deleteexampleTutorialByNum" parameterType="java.lang.Integer">
+        update exampleTutorial set isDelete = 1 where tutorialNum = #{tutorialNum} and isDelete = 0
+    </update>
+
+    <update id="deleteDetailstutorialByNum" parameterType="java.lang.Integer">
+        update detailstutorial set isDelete = 1 where dtNum = #{dtNum} and isDelete = 0
+    </update>
+
+    <select id="selectTitleForDetailsByDtNum" resultType="java.lang.String" parameterType="java.lang.Integer">
+        select title from detailstutorial where dtNum = #{dtNum} and isDelete = 0
+    </select>
+
+
+    <select id="selectExampleTutorial" parameterType="java.lang.Integer" resultType="com.tpy.entity.ExampleTutorial">
+        select * from exampleTutorial where dtNum = #{dtNum} and isDelete = 0
+    </select>
+
+    <select id="queryAllInstance" resultMap="selectResultMap">
+        select * from detailstutorial where isDelete = 0
+    </select>
+    <resultMap type= "com.tpy.entity.DetailsTutorial" id="selectResultMap">
+        <result property="specialSubject" column="specialSubject"></result>
+        <result property="exampleType" column="exampleType"></result>
+    </resultMap>
+    <!--and exampleType=#{exampleType}specialSubject=#{specialSubject}-->
+    <select id="queryInstanceBySpecialSubject" resultType="com.tpy.entity.DetailsTutorial" parameterType="java.lang.String">
+        select * from detailstutorial where exampleType = #{exampleType} and isDelete = 0
+    </select>
+
+
+    <!--查询详情实例总数量-->
+    <select id="queryMaxdetailstutorialCount" resultType="java.lang.Integer">
+        select count(*) from detailstutorial
+    </select>
+
+    <!--插入详情实例-->
+    <insert id="insertDetailstutorial" parameterType="com.tpy.entity.DetailsTutorial">
+        insert into detailstutorial
+        values(#{dtNum},#{specialSubject},#{exampleType},#{title},#{context},#{explainContext},#{runResult},#{filePath},0)
+    </insert>
+
+
+    <!--插入实例-->
+    <insert id="insertExampleTutorialMapper" parameterType="com.tpy.entity.ExampleTutorial">
+        insert into ExampleTutorial values(#{tutorialNum},#{userId},#{uploadTime},#{dtNum},0)
+    </insert>
+
+    <!--查询实例总个数-->
+    <select id="queryexampleTutorialCountMapper" resultType="java.lang.Integer">
+        select count(*) from exampleTutorial
+    </select>
+</mapper>

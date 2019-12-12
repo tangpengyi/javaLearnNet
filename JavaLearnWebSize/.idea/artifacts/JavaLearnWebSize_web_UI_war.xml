@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JavaLearnWebSize-web-UI:war">
+    <output-path>$PROJECT_DIR$/JavaLearnWebSize-web-UI/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JavaLearnWebSize-web-UI</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JavaLearnWebSize-web-UI-1.0.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JavaLearnWebSize-web-UI:war exploded" />
+    </root>
+  </artifact>
+</component>
