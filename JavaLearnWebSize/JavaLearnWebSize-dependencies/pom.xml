@@ -31,7 +31,7 @@
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <spring-expression.version>4.3.17.RELEASE</spring-expression.version>
         <spring-context-support.version>4.3.17.RELEASE</spring-context-support.version>
-        <spring-core.version>4.3.17.RELEASE</spring-core.version>
+        <spring-core.version>4.3.19.RELEASE</spring-core.version>
         <spring-context.version>4.3.17.RELEASE</spring-context.version>
         <spring-beans.version>4.3.17.RELEASE</spring-beans.version>
         <spring-tx.version>4.3.17.RELEASE</spring-tx.version>
