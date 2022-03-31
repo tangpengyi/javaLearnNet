@@ -33,7 +33,7 @@
         <spring-context-support.version>4.3.17.RELEASE</spring-context-support.version>
         <spring-core.version>4.3.17.RELEASE</spring-core.version>
         <spring-context.version>4.3.17.RELEASE</spring-context.version>
-        <spring-beans.version>4.3.17.RELEASE</spring-beans.version>
+        <spring-beans.version>5.3.18</spring-beans.version>
         <spring-tx.version>4.3.17.RELEASE</spring-tx.version>
         <spring-aop.version>4.3.17.RELEASE</spring-aop.version>
         <spring-web.xml>4.3.17.RELEASE</spring-web.xml>
